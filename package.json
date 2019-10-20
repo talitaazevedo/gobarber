@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
+    "no": "^0.0.1",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
     "prettier": "^1.18.2",
