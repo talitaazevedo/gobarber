@@ -1,0 +1,80 @@
+/**
+ *
+ *
+ *
+ *
+ *
+ *  *** Nodemon ***
+ * yarn add nodemon -D
+ *
+ * *** Sequelize ***
+ * yarn add sequelize
+ * yarn add sequelize-cli -D
+ * yarn add pg pg-hstore
+ * ['após'] configuração do sequelizerc
+ * yarn sequelize migration:create --name=create-users
+ * *** Apos a cconfiguração da migration js***
+ * ==> manda tabela para o banco de dados
+ * yarn sequelize db:migrate
+ *
+ * ==> desfaz a ultima migration
+ * yarn sequelize db:migrate:undo
+ *
+ * ==> desfaz todas as migrations
+ * yarn sequelize db:migrate:undo:all
+ *
+ *  *** Arquivos de Configuração ***
+ *
+ * *** Prettier ***
+ * {
+ *   "singleQuote": true,
+ *  "trailingComma": "es5"
+*
+ *   }
+ * *****************************************************************************
+ *  *** ESLINT ***
+ * *** padrões de projeto airbnb ***
+ * *****************************************************************************
+ * yarn add eslint
+ * yarn eslint --init
+ * yarn eslint --fix src --ext .js
+ * yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+ *
+ * *** Arquivos de Configuração  ESLINT  eslintrc.js ***
+ *
+ * ******************************************************************************
+ * extends: [
+ *   'airbnb-base',
+ *   'prettier'
+ *],
+ * plugins: ['prettier'],
+ *
+ * globals: {
+ *   Atomics: 'readonly',
+ *  SharedArrayBuffer: 'readonly',
+ * },
+ * parserOptions: {
+ * ecmaVersion: 2018,
+ *  sourceType: 'module',
+ * },
+ *  rules: {
+ *   "prettier/prettier":"error",
+ *  "class-methods-use-this":"off",
+ * "no-param-reassign":"off",
+ *"camelcase": "off",
+ *"no-unused-vars":["error",{"argsIgnorePattern": "next"}],
+ *
+ * },
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
