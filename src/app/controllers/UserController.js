@@ -26,6 +26,10 @@ class UserController {
             password_hash,
         });
     }
+
+    async update(req, res) {
+        return res.json({ ok: true });
+    }
 }
 // exporta a classe =>
 export default new UserController();
