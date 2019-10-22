@@ -69,6 +69,10 @@
  * *** bcrypt  *** => para criptografia
  *
  *
+ * *** JWT ***
+ *
+ * yarn add jsonwebtoken
+ *
  *
  *
  *
