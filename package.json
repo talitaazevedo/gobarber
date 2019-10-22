@@ -5,6 +5,7 @@
   "author": "Talita Azevedo <talita.azevedo360@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "no": "^0.0.1",
     "pg": "^7.12.1",
