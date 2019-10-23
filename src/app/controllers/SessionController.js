@@ -1,12 +1,24 @@
 // TRabalhando com sessions e autenticação de usuário
 // Metodologia JWT
 import jwt from 'jsonwebtoken';
+import * as Yup from 'yup';
 
 import User from '../models/User';
 import authConfig from '../../config/auth';
 
 class SessionController {
     async store(req, res) {
+        // validação
+        const schema = Yup.object().shape({
+            email: Yup.string()
+                .email()
+                .required(),
+            password: Yup.string().required(),
+        });
+
+        if (!(await schema.isValid(req.body))) {
+            return res.status(400).json({ error: 'Validations Fails' });
+        }
         // desconstrução busca o objeto de email senha
         const { email, password } = req.body;
         // pesquisa o e-mail

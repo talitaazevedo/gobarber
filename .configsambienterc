@@ -75,6 +75,12 @@
  *
  *
  *
+ * ***YUP***
+ *
+ * para validação de dados de usuário
+ *
+ * yarn add yup
+ *
  *
  *
  *
