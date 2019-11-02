@@ -20,7 +20,12 @@ class Database {
         // Essa variavel recebe  como parametro do sequelize o database que foi importado
         this.connection = new Sequelize(databaseConfig);
         // percorrer o array e para cada model executar o metodo init com a connection
-        models.map(model => model.init(this.connection));
+        models
+            .map(model => model.init(this.connection))
+            .map(
+                model =>
+                    model.associate && model.associate(this.connection.models)
+            );
     }
 }
 
