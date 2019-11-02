@@ -1,3 +1,4 @@
+// Model  de armazenamento de arquivo
 import Sequelize, { Model } from 'sequelize';
 
 class File extends Model {
