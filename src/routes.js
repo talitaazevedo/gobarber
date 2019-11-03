@@ -28,6 +28,8 @@ routes.use(authMiddleware);
 // upload.single('nome do campo que eu vou enviar')  =>
 routes.get('/providers', ProviderController.index);
 
+routes.get('/appointments', AppointmentController.index);
+
 routes.put('/users', UserController.update);
 
 routes.post('/files', upload.single('file'), FileController.store);
