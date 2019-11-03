@@ -6,7 +6,13 @@ import File from '../models/File';
 
 class AppointmentController {
     async index(req, res) {
+        /**
+         * Paginação
+         */
         const { page = 1 } = req.query;
+        /**
+         *   Listagem de Agendamentos
+         */
 
         const appointments = await Appointment.findAll({
             where: { user_id: req.userId, canceled_at: null },
