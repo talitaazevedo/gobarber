@@ -1,5 +1,6 @@
 // conexão com banco dde dados e importação de models
 import Sequelize from 'sequelize';
+import mongoose from 'mongoose';
 // Importando os Models
 import User from '../app/models/User';
 import File from '../app/models/File';
@@ -15,6 +16,7 @@ class Database {
     constructor() {
         // variavel instanciando o metodo init
         this.init();
+        this.mongo();
     }
 
     init() {
@@ -27,6 +29,17 @@ class Database {
                 model =>
                     model.associate && model.associate(this.connection.models)
             );
+    }
+
+    mongo() {
+        this.mongoConnection = mongoose.connect(
+            'mongodb://localhost:27017/gobarber',
+            {
+                useNewUrlParser: true,
+                useFindAndModify: true,
+                useUnifiedTopology: true,
+            }
+        );
     }
 }
 
