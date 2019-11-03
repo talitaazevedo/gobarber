@@ -9,11 +9,13 @@ import SessionController from './app/controllers/SessionController';
 
 import FileController from './app/controllers/FileController';
 import ProviderController from './app/controllers/ProviderController';
+import AppointmentController from './app/controllers/AppointmentController';
 
 // Import de Middlewares
 import authMiddleware from './app/middlewares/auth';
 
 const routes = new Router();
+
 const upload = multer(multerconfig);
 
 routes.post('/users', UserController.store);
@@ -24,9 +26,12 @@ routes.post('/sessions', SessionController.store);
 // este middleware evita que o usuário  consiga fazer update sem  estar logado
 routes.use(authMiddleware);
 // upload.single('nome do campo que eu vou enviar')  =>
-routes.post('/files', upload.single('file'), FileController.store);
+routes.get('/providers', ProviderController.index);
 
 routes.put('/users', UserController.update);
-routes.get('/providers', ProviderController.index);
+
+routes.post('/files', upload.single('file'), FileController.store);
+
+routes.post('/appointments', AppointmentController.store);
 
 export default routes;
