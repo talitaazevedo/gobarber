@@ -27,16 +27,19 @@ routes.post('/sessions', SessionController.store);
 // este middleware evita que o usuário  consiga fazer update sem  estar logado
 routes.use(authMiddleware);
 // upload.single('nome do campo que eu vou enviar')  =>
+
 routes.get('/providers', ProviderController.index);
 
 routes.get('/appointments', AppointmentController.index);
 routes.get('/schedule', ScheduleController.index);
-routes.get('/notifications', NotificationController.index);
 
 routes.put('/users', UserController.update);
 
-routes.post('/files', upload.single('file'), FileController.store);
-
 routes.post('/appointments', AppointmentController.store);
+
+routes.get('/notifications', NotificationController.index);
+routes.put('/notifications/:id', NotificationController.update);
+
+routes.post('/files', upload.single('file'), FileController.store);
 
 export default routes;
