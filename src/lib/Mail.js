@@ -1,5 +1,8 @@
 // Configuração de coisas adicionais referente ao email
 import nodemailer from 'nodemailer';
+import { resolve } from 'path';
+import exphbs from 'express-handlebars';
+import nodemailerhbs from 'nodemailer-express-handlebars';
 import mailConfig from '../config/mail';
 
 class Mail {
@@ -11,6 +14,24 @@ class Mail {
             secure,
             auth: auth.user ? auth : null,
         });
+    }
+
+    configureTemplates() {
+        const viewPath = resolve(__dirname, '..', 'app', 'views', 'emails');
+        // como ele compila nossos emails age em cima do nodemailer
+        this.transporter.use(
+            'compile',
+            nodemailerhbs({
+                viewEngine: exphbs.create({
+                    layoutsDir: resolve(viewPath, 'layouts'),
+                    partialsDir: resolve(viewPath, 'partials'),
+                    defaultLayout: 'default',
+                    extname: '.hbs',
+                }),
+                viewPath,
+                extName: '.hbs',
+            })
+        );
     }
 
     sendMail(message) {

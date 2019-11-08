@@ -10,3 +10,6 @@ export default {
         from: 'Equipe GoBarber <noreply@gobarber.com',
     },
 };
+
+// https://mailtrap.io/inboxes/745190/settings
+// https://handlebarsjs.com
