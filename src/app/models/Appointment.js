@@ -11,7 +11,7 @@ class Appointment extends Model {
 
                 // primeiro parametro
                 date: Sequelize.STRING,
-                canceled_at: Sequelize.STRING,
+                canceled_at: Sequelize.DATE,
             },
             {
                 // segundo parametro

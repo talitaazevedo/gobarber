@@ -157,6 +157,7 @@ class AppointmentController {
             to: `${appointment.provider.name}  <${appointment.provider.email} >`,
             subject: 'Agendamento Cancelado',
             template: 'cancellation',
+            // envia todas as váriaveis que o cancellation está esperando
             context: {
                 provider: appointment.provider.name,
                 user: appointment.user.name,

@@ -14,6 +14,8 @@ class Mail {
             secure,
             auth: auth.user ? auth : null,
         });
+        // chama o metodo criado
+        this.configureTemplates();
     }
 
     configureTemplates() {
@@ -22,10 +24,16 @@ class Mail {
         this.transporter.use(
             'compile',
             nodemailerhbs({
+                // primeira configuração do compile
                 viewEngine: exphbs.create({
+                    // usa o path  para resolver o caminho
                     layoutsDir: resolve(viewPath, 'layouts'),
                     partialsDir: resolve(viewPath, 'partials'),
+                    // aqui o nome do layout que vou usar
                     defaultLayout: 'default',
+
+                    // nome da extensão
+
                     extname: '.hbs',
                 }),
                 viewPath,
