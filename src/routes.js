@@ -12,6 +12,7 @@ import ProviderController from './app/controllers/ProviderController';
 import AppointmentController from './app/controllers/AppointmentController';
 import ScheduleController from './app/controllers/ScheduleController';
 import NotificationController from './app/controllers/NotificationController';
+import AvailableController from './app/controllers/AvailableController';
 // Import de Middlewares
 import authMiddleware from './app/middlewares/auth';
 
@@ -29,7 +30,7 @@ routes.use(authMiddleware);
 // upload.single('nome do campo que eu vou enviar')  =>
 
 routes.get('/providers', ProviderController.index);
-
+routes.get('/providers/:providerId/available', AvailableController.index);
 routes.get('/schedule', ScheduleController.index);
 
 routes.put('/users', UserController.update);

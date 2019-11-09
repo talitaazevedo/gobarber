@@ -46,6 +46,7 @@ class Queue {
         });
     }
 
+    // Monitora falhas na fila
     handleFailure(job, err) {
         console.log(`Queue ${job.queue.name}: FAILED`, err);
     }
