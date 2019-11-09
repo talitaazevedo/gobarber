@@ -1,5 +1,6 @@
 import { format, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
+// eslint-disable-next-line import/no-unresolved
 import Mail from '../../lib/Mail';
 
 class CancellationMail {
@@ -8,6 +9,7 @@ class CancellationMail {
     }
 
     async handle({ data }) {
+        console.log('A fila executou');
         const { appointment } = data;
         await Mail.sendMail({
             to: `${appointment.provider.name}  <${appointment.provider.email} >`,
