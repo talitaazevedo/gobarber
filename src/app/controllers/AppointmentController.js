@@ -6,6 +6,7 @@ import User from '../models/User';
 import File from '../models/File';
 import Notification from '../schemas/Notification';
 
+// eslint-disable-next-line import/no-unresolved
 import CancellationMail from '../jobs/CancellationMail';
 import Queue from '../../lib/Queue';
 
