@@ -24,7 +24,7 @@ class AppointmentController {
         const appointments = await Appointment.findAll({
             where: { user_id: req.userId, canceled_at: null },
             order: ['date'],
-            attributes: ['id', 'date'],
+            attributes: ['id', 'date', 'past', 'cancelable'],
             // listagem limite de 20 em 20
             limit: 20,
             // Essa conta é simples mas bem util
