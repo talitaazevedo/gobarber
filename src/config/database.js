@@ -1,14 +1,15 @@
 // Conffiguração do sequelize
+require('dotenv/config');
 
 module.exports = {
     // dialect é o tipo de banco que vou usar
     dialect: 'postgres',
-    host: 'localhost',
+    host: process.env.DB_HOST,
 
-    username: 'postgres',
-    password: 'docker',
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
     // nome do banco
-    database: 'gobarberdb',
+    database: process.env.DB_NAME,
     define: {
         // padrão de projeto comum
         timestamps: true,
